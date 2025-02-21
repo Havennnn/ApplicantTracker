@@ -8,7 +8,7 @@ This is my submission for assessment in Laravel Project
 -   "composer install"
 -   "npm install"
 -   "cp .env.example .env"
--   php artisan key:generate
+-   "php artisan key:generate"
 -   "php artisan migrate"
 -   "npm run dev"
 -   dont close the current terminal and add a new terminal
