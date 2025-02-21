@@ -7,12 +7,12 @@ export default function Dashboard() {
   return (
     <AuthenticatedLayout>
       <Head title="Dashboard" />
-      <div className="px-12 py-6">
+      <div className="px-12 py-4">
         <div className="flex gap-5">
           <div className="w-2/4 h-[620px] px-5 pt-5 rounded-xl bg-slate-100 shadow-xl">
             <h1 className="text-3xl font-bold mb-2">
               Hello welcome!{" "}
-              <span className="text-indigo-600 uppercase">{user.name}</span>
+              <span className="text-indigo-600 uppercase">{user.name}</span> 👋
             </h1>
             <h1 className="text-lg mb-2">
               This is my submission for{" "}
@@ -61,6 +61,8 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="w-3/4 p-2">
+            <h1 className="text-2xl font-semibold mt-2">INSTRUCTION:</h1>
+            <p>Click the applicant tab for the managing the application CRUD</p>
             <h1 className="text-2xl font-semibold mt-2">
               MY APPROACH{" "}
               <span className="text-indigo-600 text-lg">

@@ -55,7 +55,12 @@ export default function Index({ applicants }) {
     <AuthenticatedLayout>
       <Head title="Applicants" />
       <div className="px-12 py-4">
-        <div className="flex items-center justify-between">
+        <div className="bg-indigo-600 bg-opacity-50 flex w-full justify-center items-center p-2 rounded-xl">
+          <p className="font-bold">
+            * This is where the managing the applicants will be. *
+          </p>
+        </div>
+        <div className="flex items-center justify-between mt-2">
           <h1 className="text-2xl font-bold py-2">Applicants List</h1>
           <button
             onClick={openModal}
