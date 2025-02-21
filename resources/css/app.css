@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .highlight {
+        @apply bg-gray-600 bg-opacity-45 text-sm rounded-full px-2;
+    }
+}
