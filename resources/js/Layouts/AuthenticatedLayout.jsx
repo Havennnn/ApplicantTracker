@@ -30,7 +30,6 @@ export default function AuthenticatedLayout({ header, children }) {
                 >
                   Dashboard
                 </NavLink>
-                {/* Add Applicants Link */}
                 <NavLink
                   href={route("applicants.index")}
                   active={route().current("applicants.index")}
