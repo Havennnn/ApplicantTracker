@@ -12,11 +12,8 @@ Before running the project, ensure you have the following installed on your syst
 
 Follow these steps to set up and run the project:
 
-#### 1️⃣ Clone the Repository
-Open `CMD`, `PowerShell`, or `Git Bash` and run:
-- "git clone https://github.com/Havennnn/ApplicantTracker.git"
-- "cd ApplicantTracker"
-- "code ."
+#### 1️⃣ Download the Repository
+Download the code zip then extract the folder and open the folder in visual studio
 
 ### 2️⃣ Install Dependencies
 Open the `Terminal` in Visual Studio Code
