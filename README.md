@@ -14,8 +14,8 @@ Follow these steps to set up and run the project:
 
 #### 1️⃣ Clone the Repository
 Open `CMD`, `PowerShell`, or `Git Bash` and run:
-- git clone https://github.com/Havennnn/ApplicantTracker.git
-- cd ApplicantTracker
+- "git clone https://github.com/Havennnn/ApplicantTracker.git"
+- "cd ApplicantTracker"
 - "code ."
 
 ### 2️⃣ Install Dependencies
