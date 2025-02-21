@@ -9,7 +9,7 @@ export default function Dashboard() {
       <Head title="Dashboard" />
       <div className="px-12 py-4">
         <div className="flex gap-5">
-          <div className="w-2/4 h-[620px] px-5 pt-5 rounded-xl bg-slate-100 shadow-xl">
+          <div className="w-2/4 h-[620px] px-5 pt-5 rounded-xl bg-slate-50 shadow-xl">
             <h1 className="text-3xl font-bold mb-2">
               Hello welcome!{" "}
               <span className="text-indigo-600 uppercase">{user.name}</span> 👋

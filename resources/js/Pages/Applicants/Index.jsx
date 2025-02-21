@@ -55,7 +55,7 @@ export default function Index({ applicants }) {
     <AuthenticatedLayout>
       <Head title="Applicants" />
       <div className="px-12 py-4">
-        <div className="bg-indigo-600 bg-opacity-50 flex w-full justify-center items-center p-2 rounded-xl">
+        <div className="bg-indigo-500 bg-opacity-50 flex w-full justify-center items-center p-2 rounded-xl">
           <p className="font-bold">
             * This is where the managing the applicants will be. *
           </p>
