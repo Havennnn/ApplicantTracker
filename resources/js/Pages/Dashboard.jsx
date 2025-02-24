@@ -196,9 +196,6 @@ export default function Dashboard() {
             </h1>
             <div>
               <li>
-                Uses Inertia.js to communicate with Laravel backend seamlessly.
-              </li>
-              <li>
                 State Management with React Hooks (useState, useForm) to handle
                 form inputs and submission.
               </li>

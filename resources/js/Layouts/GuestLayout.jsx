@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 
 export default function GuestLayout({ children }) {
   return (
-    <div className="flex min-h-screen flex-col items-center bg-gray-100 sm:justify-center">
+    <div className="flex min-h-screen flex-col items-center bg-gray-100 sm:justify-center ">
       <section className="bg-white w-full">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
