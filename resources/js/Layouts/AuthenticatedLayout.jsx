@@ -15,7 +15,7 @@ export default function AuthenticatedLayout({ header, children }) {
     <div className="min-h-screen bg-gray-100">
       <nav className="border-b border-gray-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 justify-between">
+          <div className="flex h-16 justify-between sm:hidden">
             <div className="flex">
               <div className="flex shrink-0 items-center">
                 <Link href="/">
@@ -167,15 +167,121 @@ export default function AuthenticatedLayout({ header, children }) {
         </div>
       </nav>
 
-      {header && (
-        <header className="bg-white shadow">
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            {header}
-          </div>
-        </header>
-      )}
+      <div className="flex ">
+        <div className="fixed h-screen w-16 flex-col justify-between border-e border-gray-100 bg-white hidden sm:flex">
+          <div>
+            <div className="inline-flex size-16 items-center justify-center pt-12">
+              <Link href="/">
+                <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
+              </Link>
+            </div>
 
-      <main>{children}</main>
+            <div className="border-t border-gray-100">
+              <div className="px-2">
+                <div className="py-4 flex flex-col gap-2 pt-8">
+                  <NavLink
+                    href={route("dashboard")}
+                    active={route().current("dashboard")}
+                    title="Dashboard"
+                    className="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="size-5 opacity-75"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"
+                      />
+                    </svg>
+
+                    <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                      Dashboard
+                    </span>
+                  </NavLink>
+                  <NavLink
+                    href={route("applicants.index")}
+                    active={route().current("applicants.index")}
+                    title="Applicants"
+                    className="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="size-5 opacity-75"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </NavLink>
+                </div>
+
+                <ul className="space-y-1 border-t border-gray-100 pt-4">
+                  <li>
+                    <NavLink
+                      href={route("profile.edit")}
+                      title="Account"
+                      className="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="size-5 opacity-75"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2">
+            <NavLink
+              method="post"
+              href={route("logout")}
+              as="button"
+              title="Logout"
+              className="group relative flex w-full justify-center rounded-lg px-2 py-1.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5 opacity-75"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                />
+              </svg>
+            </NavLink>
+          </div>
+        </div>
+        <main className="w-[100%] sm:ml-10">{children}</main>
+      </div>
     </div>
   );
 }
