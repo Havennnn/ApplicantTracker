@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "@inertiajs/react";
+import SecondaryButton from "./SecondaryButton";
+import PrimaryButton from "./PrimaryButton";
 
 export default function AddApplicantModal({ isOpen, onClose }) {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -15,15 +17,15 @@ export default function AddApplicantModal({ isOpen, onClose }) {
     e.preventDefault();
     post("/applicants", {
       onSuccess: () => {
-        reset(); // Reset the form fields
-        onClose(); // Close the modal
+        reset();
+        onClose();
       },
     });
   };
 
   const handleCancel = () => {
-    reset(); // Reset the form fields
-    onClose(); // Close the modal
+    reset();
+    onClose();
   };
 
   const jobPositions = {
@@ -156,20 +158,12 @@ export default function AddApplicantModal({ isOpen, onClose }) {
 
           {/* Submit Button */}
           <div className="flex justify-end space-x-2">
-            <button
-              type="button"
-              onClick={handleCancel} // Use handleCancel for the Cancel button
-              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
-            >
+            <SecondaryButton type="button" onClick={handleCancel}>
               Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={processing}
-              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
-            >
+            </SecondaryButton>
+            <PrimaryButton type="submit" disabled={processing}>
               {processing ? "Adding..." : "Add Applicant"}
-            </button>
+            </PrimaryButton>
           </div>
         </form>
       </div>

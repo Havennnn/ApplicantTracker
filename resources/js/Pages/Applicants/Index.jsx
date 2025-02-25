@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, useForm } from "@inertiajs/react";
 import AddApplicantModal from "@/Components/AddApplicantModal";
+import PrimaryButton from "@/Components/PrimaryButton";
+import SecondaryButton from "@/Components/SecondaryButton";
 
 export default function Index({ applicants }) {
   const { delete: destroy, processing } = useForm();
@@ -55,25 +57,33 @@ export default function Index({ applicants }) {
     <AuthenticatedLayout>
       <Head title="Applicants" />
       <div className="px-12 py-4">
-        <div className="bg-indigo-500 bg-opacity-50 flex w-full justify-center items-center p-2 rounded-xl">
-          <p className="font-bold">
-            * This is where the managing the applicants will be. *
-          </p>
-        </div>
         <div className="flex items-center justify-between mt-2">
-          <h1 className="text-2xl font-bold py-2">Applicants List</h1>
-          <button
-            onClick={openModal}
-            className="bg-indigo-600 text-white px-4 py-2 rounded flex items-center justify-center hover:bg-indigo-700"
-          >
-            Add Applicant
-          </button>
+          <div className="flex items-center justify-center gap-1 text-[#1e1e1e]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 11c1.656 0 3-1.344 3-3s-1.344-3-3-3-3 1.344-3 3 1.344 3 3 3zm0 2c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4zm6 0h2a2 2 0 0 1 2 2v4h-4m0-6v6m-6-6h6"
+              />
+            </svg>
+            <h1 className="text-2xl font-semibold py-2 font-poppins">
+              Applicants List
+            </h1>
+          </div>
+          <PrimaryButton onClick={openModal}>Add Applicant</PrimaryButton>
         </div>
 
         <AddApplicantModal isOpen={isModalOpen} onClose={closeModal} />
 
         <div className="overflow-x-auto mt-2">
-          <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+          <table className="min-w-full max-w-full divide-y-2 divide-gray-200 bg-white text-sm">
             <thead className="ltr:text-left rtl:text-right">
               <tr>
                 <th className="px-4 py-2 font-medium whitespace-nowrap text-gray-900">
@@ -108,7 +118,7 @@ export default function Index({ applicants }) {
                         type="text"
                         value={data.name}
                         onChange={(e) => setData("name", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-32 text-sm"
                       />
                     ) : (
                       applicant.name
@@ -122,7 +132,7 @@ export default function Index({ applicants }) {
                         type="email"
                         value={data.email}
                         onChange={(e) => setData("email", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-36 text-sm"
                       />
                     ) : (
                       applicant.email
@@ -136,7 +146,7 @@ export default function Index({ applicants }) {
                         type="text"
                         value={data.phone}
                         onChange={(e) => setData("phone", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-28 text-sm"
                       />
                     ) : (
                       applicant.phone
@@ -149,7 +159,7 @@ export default function Index({ applicants }) {
                       <select
                         value={data.company}
                         onChange={(e) => setData("company", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-24 text-sm"
                       >
                         <option value="CNX">CNX</option>
                         <option value="FNDVR">FNDVR</option>
@@ -167,7 +177,7 @@ export default function Index({ applicants }) {
                       <select
                         value={data.position}
                         onChange={(e) => setData("position", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-[180px] text-sm"
                       >
                         <option value="">Select a job position</option>
                         {data.company &&
@@ -188,7 +198,7 @@ export default function Index({ applicants }) {
                       <select
                         value={data.status}
                         onChange={(e) => setData("status", e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 w-32 text-sm"
                       >
                         <option value="Unviewed">Unviewed</option>
                         <option value="Interviewed">Interviewed</option>
@@ -245,37 +255,29 @@ export default function Index({ applicants }) {
                   </td>
 
                   {/* Actions */}
-                  <td className="px-4 py-2 whitespace-nowrap flex gap-2 items-center">
+                  <td className="px-4 py-2 whitespace-nowrap flex gap-2 items-end">
                     {editingId === applicant.id ? (
                       <>
-                        <button
+                        <SecondaryButton
                           onClick={() => handleEditSubmit(applicant.id)}
-                          className="inline-block rounded-sm bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-green-700"
                         >
                           Save
-                        </button>
-                        <button
-                          onClick={() => setEditingId(null)}
-                          className="inline-block rounded-sm bg-gray-600 px-4 py-2 text-xs font-medium text-white hover:bg-gray-700"
-                        >
+                        </SecondaryButton>
+                        <SecondaryButton onClick={() => setEditingId(null)}>
                           Cancel
-                        </button>
+                        </SecondaryButton>
                       </>
                     ) : (
                       <>
-                        <button
-                          onClick={() => enableEdit(applicant)}
-                          className="inline-block rounded-sm bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
-                        >
+                        <SecondaryButton onClick={() => enableEdit(applicant)}>
                           Edit
-                        </button>
-                        <button
+                        </SecondaryButton>
+                        <SecondaryButton
                           onClick={() => handleDelete(applicant.id)}
-                          className="inline-block rounded-sm bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700"
                           disabled={processing}
                         >
                           {processing ? "Deleting..." : "Delete"}
-                        </button>
+                        </SecondaryButton>
                       </>
                     )}
                   </td>

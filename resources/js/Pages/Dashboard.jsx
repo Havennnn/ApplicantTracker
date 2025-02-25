@@ -9,69 +9,76 @@ export default function Dashboard() {
       <Head title="Dashboard" />
       <div className="px-12 py-4">
         <div className="flex gap-5">
-          <div className="w-2/4 h-[620px] px-5 pt-5 rounded-xl bg-slate-50 shadow-xl">
+          {/* Left Container */}
+          <div className="w-1/4 min-h-fit px-5 py-5 rounded-xl bg-slate-50 shadow-xl self-start">
             <h1 className="text-3xl font-bold mb-2">
               Hello welcome!{" "}
-              <span className="text-indigo-600 uppercase">{user.name}</span> 👋
+              <span className="text-[#1e1e1e] uppercase">{user.name}</span> 👋
             </h1>
             <h1 className="text-lg mb-2">
               This is my submission for{" "}
               <span className="font-semibold">Laravel Project</span> Assessment
             </h1>
-            <h1 className="text-indigo-600 font-semibold">Assessment Task:</h1>
-            <p>Create a Laravel project for managing applicants.</p>
+            <h1 className="text-[#1e1e1e] font-semibold">Assessment Task:</h1>
+            <p className="text-sm">
+              Create a Laravel project for managing applicants.
+            </p>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] font-semibold mt-2">
                 Framework Options:
               </h1>
-              <p>Laravel + Blade & Alpine</p>
-              <p>Laravel + Livewire</p>
-              <p>Laravel + Filament</p>
-              <p>Laravel + Vue</p>
-              <p>Laravel + React.js</p>
+              <div className="text-sm">
+                <p>Laravel + Blade & Alpine</p>
+                <p>Laravel + Livewire</p>
+                <p>Laravel + Filament</p>
+                <p>Laravel + Vue</p>
+                <p>Laravel + React.js</p>
+              </div>
             </div>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] font-semibold mt-2">
                 Applicant Management:
               </h1>
-              <p>
+              <p className="text-sm">
                 Implement Create, Read, Update, and Delete (CRUD) functionality
                 for applicant records
               </p>
             </div>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] font-semibold mt-2">
                 Applicant Status Tags:
               </h1>
-              <p>
+              <div className="text-sm">
                 <p>Unviewed</p>
                 <p>Interviewed</p>
                 <p>Hired</p>
                 <p>Onboarding</p>
                 <p>Resign</p>
-              </p>
+              </div>
             </div>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] font-semibold mt-2">
                 Authentication:
               </h1>
-              <p>
-                <p>Ensure the system has authentication for secure access.</p>
+              <p className="text-sm">
+                Ensure the system has authentication for secure access.
               </p>
             </div>
           </div>
+
+          {/* Right Container */}
           <div className="w-3/4 p-2">
             <h1 className="text-2xl font-semibold mt-2">INSTRUCTION:</h1>
             <p>Click the applicant tab for the managing the application CRUD</p>
             <h1 className="text-2xl font-semibold mt-2">
               MY APPROACH{" "}
-              <span className="text-indigo-600 text-lg">
+              <span className="text-[#1e1e1e] text-lg">
                 {" (LARAVEL + REACT) "}
               </span>
               :
             </h1>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] font-semibold mt-2">
                 Framework Reasoning:
               </h1>
               <p>
@@ -83,7 +90,7 @@ export default function Dashboard() {
               </p>
             </div>
             <div>
-              <h1 className="text-indigo-600 font-semibold mt-4">
+              <h1 className="text-[#1e1e1e] font-semibold mt-4">
                 Authentication:
               </h1>
               <p>
@@ -98,7 +105,7 @@ export default function Dashboard() {
               CRUD Implementation:
             </h1>
             <div>
-              <h1 className="text-indigo-600 text-xl font-semibold mt-2">
+              <h1 className="text-[#1e1e1e] text-xl font-semibold mt-2">
                 Backend {"(Laravel)"}:
               </h1>
               <p className="font-bold text-md mt-2">
@@ -191,7 +198,7 @@ export default function Dashboard() {
                 </p>
               </div>
             </div>
-            <h1 className="text-indigo-600 text-xl font-semibold mt-2">
+            <h1 className="text-[#1e1e1e] text-xl font-semibold mt-2">
               Frontend {"(React)"}:
             </h1>
             <div>
